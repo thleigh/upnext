@@ -6,6 +6,12 @@ const session = require('express-session');
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
+const mongoose = require('mongoose')
+
+// Sneaks API
+const SneaksAPI = require('sneaks-api')
+const sneaks = new SneaksAPI();
+
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
@@ -51,9 +57,13 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
+app.get('/discover', (req, res) => {
+  res.render('discover')
+})
+
 app.use('/auth', require('./routes/auth'));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });

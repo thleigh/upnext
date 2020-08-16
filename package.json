@@ -13,6 +13,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
@@ -26,6 +27,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.11.0",
     "sequelize": "^5.8.12",
-    "sessions": "0.0.2-7"
+    "sessions": "0.0.2-7",
+    "sneaks-api": "^1.0.7"
   }
 }
