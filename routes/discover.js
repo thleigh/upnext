@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     res.render('discover')
 })
 
-router.get('/:id', (req, res) => {
+router.post('/:id', (req, res) => {
     let shoe = req.body.search
         sneaks.getProducts(shoe, function(err, products){
             console.log(products)
