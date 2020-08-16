@@ -1,0 +1,16 @@
+<h2>Discover</h2>
+
+<form action="/discover" method="GET">
+<label for="search">Search: </label>
+<input type="text" class="shoeSearch" id="search" name="search" required>
+<button type="submit">Search</button>
+</form>
+
+
+<!-- Displays the results of the shoe search. -->
+<% products.forEach(s => { %> 
+<div id="productshoeResults">
+    <h3 class="shoeName"><%= s.shoeName %></h3>
+    <img class="shoeImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
+</div>
+<% }) %> 

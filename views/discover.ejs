@@ -1,4 +1,7 @@
 <h2>Discover</h2>
 
-<h3><%= products.shoeName%></h3>
-<img src="<%= products.thumbnail %>" alt="<%= products.shoeName%>">
+<form action="/discover" method="GET">
+<label for="search">Search: </label>
+<input type="text" class="shoeSearch" id="search" name="search" required>
+<button type="submit">Search</button>
+</form>

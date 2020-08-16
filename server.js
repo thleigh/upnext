@@ -57,9 +57,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
-app.get('/discover', (req, res) => {
-  res.render('discover')
-})
+app.use('/discover', require('./routes/discover'))
 
 app.use('/auth', require('./routes/auth'));
 

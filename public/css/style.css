@@ -7,3 +7,15 @@ nav ul li {
 h1 {
   color: chartreuse;
 }
+
+.shoeImg {
+  width: 300px;
+}
+
+.shoeName {
+
+}
+
+#shoeResults {
+  text-align: center;
+}
