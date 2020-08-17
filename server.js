@@ -14,7 +14,6 @@ const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI();
 // require('./routes/sneaks.routes.js')(app);
 
-
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
 
@@ -63,13 +62,9 @@ app.use('/discover', require('./routes/discover'))
 
 app.use('/auth', require('./routes/auth'));
 
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sneakers');
-
 const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });
 
 module.exports = server;
-module.exports = SneaksAPI;
