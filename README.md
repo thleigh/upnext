@@ -28,6 +28,7 @@ To me this says, if you work/care so much and do things the right way, you will 
 __*No tears were shed during the process of making this app.*__
 
 Here is the ERD that I created that allowed me to visualize the model's that I was creating and their associations to other models.
+
 ![ERD](./assets/erd2.png)
 
 Here is the wireframe that I created that let me play around with different designs before actually touching any CSS. Although it may not look 100% similar, creating the wireframe beforehand saved me from deciding after the fact and having to go back and forth with CSS. 
