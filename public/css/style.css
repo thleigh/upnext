@@ -4,18 +4,37 @@ nav ul li {
   margin-right: .3em;
 }
 
+#navbar {
+  text-align: right;
+}
+#upnext {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
 h1 {
   color: chartreuse;
+}
+
+.subHeader {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.searchBar {
+  text-align: center;
 }
 
 .shoeImg {
   width: 300px;
 }
 
-.shoeName {
-
-}
-
-#shoeResults {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
   text-align: center;
 }

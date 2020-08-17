@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI();
 
+// Gets the most popular shoes at the moment and displays them.
 router.get('/', (req, res) => {
     sneaks.getMostPopular(function (err, products) {
         if (err) {
