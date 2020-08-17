@@ -32,4 +32,16 @@ router.get('/:shoe', (req, res) => {
     });
 });
 
+// // Gets the shoe's data when shoe is clicked
+// router.get('/:shoeName', (req, res) => {
+//     sneaks.getProducts(req.query.shoeName, function(err, products){
+//         if(err) {
+//             console.log(err)
+//             res.send('Product Not Found')
+//         } else {
+//             res.render('discover/show', {products})
+//         };
+//     });
+// });
+
 module.exports = router;

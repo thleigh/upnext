@@ -12,8 +12,23 @@
 <div class="grid">
     <% products.forEach(s => { %> 
         <div id="shoeResults">
-                <img class="shoeImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
-                <h3 class="shoeName"><%= s.shoeName %></h3>
+            <input type="image" src="<%= s.thumbnail %>" class="shoeImg" onclick="togglePopup()">
+            <h3 class="shoeName"><%= s.shoeName %></h3>
+        </div>
+        
+        <div class="popup" id="popup-1">
+            <div class="overlay">
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>
+                    <h4 class="popupName"><%=s.shoeName%></h4>
+                    <img class="popupImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
+                </div>
             </div>
+        </div>
+        
+        <% function togglePopup() { %>
+            <%= document.getElementById('popup-1').classList.toggle('active') %>
+        <% } %> 
+        <!-- <button onclick="togglePopup()">Show Popup</button> -->
     <% }) %> 
 </div>    
