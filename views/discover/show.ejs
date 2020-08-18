@@ -2,8 +2,13 @@
 
 <!-- Displays the results of the shoe search. -->
     <% products.forEach(s => { %> 
-        <div id="productshoeResults">
-            <h3 class="shoeName"><%= s.shoeName %></h3>
-            <img class="shoeImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
+        <div id="shoeDetails">
+            <h3 class="detail"><%= s.shoeName %></h3>
+            <img class="detailImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
+            <h4 id="releaseDate">Released: <%= s.releaseDate%></h4>
+            <h4 id="retailPrice">Retail Price: <%= s.retailPrice%></h4>
+            <h4 id="shoeDescription"><%= s.description%></h4>
+            <h4 id="resellLinks"><%= s.resellLinks%></h4>
+
         </div>
     <% }) %> 

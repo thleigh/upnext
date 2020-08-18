@@ -1,7 +1,19 @@
 nav ul li {
-  text-decoration: none;
   display: inline-block;
   margin-right: .3em;
+}
+
+.navLink{
+  text-decoration: none;
+  color: black;
+}
+
+.navLink:hover {
+  color: gray;
+}
+
+body {
+  font-family: "helvetica";
 }
 
 #navbar {
@@ -33,7 +45,7 @@ h1 {
 }
 
 .shoeImg {
-  width: 300px;
+  width: 200px;
 }
 
 #showDetails {
@@ -41,60 +53,33 @@ h1 {
   color: black;
 }
 
+#shoeDetails {
+
+}
+
 .grid {
   display: grid;
+  width: 800px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 15px;
-  margin-top: 50px;
   text-align: center;
+  padding: 50px;
+  margin: 25px auto auto auto;
 }
 
-.popup .overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vw;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  display: none;
-}
-
-.popup .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  background: #fff;
-  width: 450px;
-  height: 450px;
-  z-index: 2;
+.shoeName {
   text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
+  text-decoration: none;
+  background-color: #fff;
+  border: none;
+  font-size: 18px;
 }
 
-.popup .close-btn {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  background: #222;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
+.shoeName:hover {
+  color: gray;
 }
 
-.popup.active .overlay {
-  display: block;
-}
-
-.popup.active .content {
-  transition: all 300ms ease-in-out;
-  transform: translate(-50%, -50%) scale(0);
+.detailImg {
+  width: 300px;
 }

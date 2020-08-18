@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 // Gets the shoe that is searched by the shoe's name.
 router.get('/:shoe', (req, res) => {
     sneaks.getProducts(req.query.shoe, function(err, products){
-        console.log(products)
+        // console.log(products)
         if(err) {
             console.log(err)
             res.send('Product Not Found')
@@ -32,16 +32,17 @@ router.get('/:shoe', (req, res) => {
     });
 });
 
-// // Gets the shoe's data when shoe is clicked
-// router.get('/:shoeName', (req, res) => {
-//     sneaks.getProducts(req.query.shoeName, function(err, products){
-//         if(err) {
-//             console.log(err)
-//             res.send('Product Not Found')
-//         } else {
-//             res.render('discover/show', {products})
-//         };
-//     });
-// });
+// Gets the shoe's data when shoe is clicked by using the shoeID
+router.post('/:id', (req, res) => {
+    sneaks.getProducts(req.body.id, function(err, products){
+        if(err) {
+            console.log(err)
+            res.send('Product Not Found')
+        } else {
+            console.log(products)
+            res.render('discover/show', {products})
+        };
+    });
+});
 
 module.exports = router;
