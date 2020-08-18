@@ -1,14 +1,28 @@
-<h2>Discover</h2>
+
 
 <!-- Displays the results of the shoe search. -->
     <% products.forEach(s => { %> 
         <div id="shoeDetails">
-            <h3 class="detail"><%= s.shoeName %></h3>
-            <img class="detailImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
+            <h2 class="detail"><%= s.shoeName %></h2>
+            <img class="detailImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>"> 
             <h4 id="releaseDate">Released: <%= s.releaseDate%></h4>
-            <h4 id="retailPrice">Retail Price: <%= s.retailPrice%></h4>
-            <h4 id="shoeDescription"><%= s.description%></h4>
-            <h4 id="resellLinks"><%= s.resellLinks%></h4>
-
+            <h4 id="retailPrice">Retail Price: $<%= s.retailPrice%></h4>
+            <h4 id="shoeDescription">About: 
+                <br>
+                <%= s.description%>
+            </h4>
+            <h4>View on: </h4>
+                <div id="resellers">
+                    <a href="<%= s.resellLinks.stockX%>">
+                        <img id="stockX" src="../../assets/stockx.png" alt="stockX">
+                    </a>
+                    <a href="<%= s.resellLinks.goat%>">
+                        <img id="goat" src="../../assets/goat.png" alt="goat">
+                    </a>
+                </div>
+            <br>
+            <hr>
+            <a href="/discover">Back to Discover</a>
+            <!-- <h4 id="resellLinks"><%#= s.resellLinks%></h4> -->
         </div>
     <% }) %> 

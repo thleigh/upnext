@@ -1,14 +1,16 @@
-<h2 class="subHeader">Discover</h2>
+<h1 class="subHeader">Discover</h1>
 
 <form action="/discover/:shoe" method="GET">
     <div class="searchBar">
-        <label for="shoe">Find a shoe: </label>
-        <input type="text" class="shoeSearch" name="shoe" required>
-        <button type="submit">Search</button>
+        <input type="text" class="shoeSearch" name="shoe" required placeholder="Find a shoe:">
+        <button type="submit">X</button>
     </div>
 </form>
 
 <!-- Displays the results of the shoe search. -->
+<div class="pageTitle">
+    <h1 id="trending">Trending Now</h1>
+</div>
 <div class="grid">
     <% products.forEach(s => { %> 
         <div id="shoeResults">

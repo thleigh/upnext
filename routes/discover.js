@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
             console.log(err)
             res.send('No Products in Database')
         } else {
-            res.render('discover/discover', {products})
+            res.render('discover/discover', {products: products.slice(0,12)})
         }
     })
 })
@@ -25,7 +25,7 @@ router.get('/:shoe', (req, res) => {
         // console.log(products)
         if(err) {
             console.log(err)
-            res.send('Product Not Found')
+            res.render('notfound')
         } else {
             res.render('discover/discover', {products})
         };
@@ -37,7 +37,7 @@ router.post('/:id', (req, res) => {
     sneaks.getProducts(req.body.id, function(err, products){
         if(err) {
             console.log(err)
-            res.send('Product Not Found')
+            res.render('notfound')
         } else {
             console.log(products)
             res.render('discover/show', {products})
