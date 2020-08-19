@@ -20,7 +20,7 @@ const sneaks = new SneaksAPI();
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
 
-cloudinary.config(process.env.CLOUDINARY_URL)
+cloudinary.config(process.env.API_KEY)
 app.set('view engine', 'ejs');
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: true }));

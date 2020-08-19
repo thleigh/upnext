@@ -7,7 +7,7 @@
     <div id="upload">
         <h1>File Upload</h1>
         
-        <form enctype="multipart/form-data" action="/" method="POST">
+        <form enctype="multipart/form-data" action="/community" method="POST">
             <input type="file" name="myFile">
             <input type="submit" class="btn btn-primary">
         </form>
@@ -16,16 +16,14 @@
 </div>
     
 
+<div class="comGrid">
 <% if (myPics.length) { %> 
-    <div class="picBox">
         <% myPics.forEach(p => { %>
             <div>
                 <img src="<%=p.url%>" alt="picture">
             </div>
         <% }) %>
-    </div> 
-<% } else { %>
-    <h2>sorry, I don't have any pics</h2>
-<% } %> 
-
-<a href="/">New Pic?</a>
+    <% } else { %>
+        <h2>sorry, I don't have any pics</h2>
+    <% } %> 
+</div> 

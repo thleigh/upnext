@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   cloudpic.init({
     url: DataTypes.STRING
+    
   }, {
     sequelize,
     modelName: 'cloudpic',

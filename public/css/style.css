@@ -36,7 +36,7 @@ nav ul li {
 
 #navSignup {
   position: absolute; 
-  right: 200px;
+  right: 190px;
 }
 
 #navLogin {
@@ -257,7 +257,31 @@ nav ul li {
   transform: translate(-50%, -50%);
 }
 
+#topCommunity {
+  margin: 30% auto auto auto;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .picBox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.comGrid {
+  display: grid;
+  width: 800px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 30px;
+  text-align: center;
+  padding: 80px 50px 50px 50px;
+  margin: 59% auto auto auto;
+  background-color: white;
+}
+#upload {
+  margin: 250px auto auto auto;
+  text-align: center;
 }
