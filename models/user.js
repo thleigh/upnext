@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.hasMany(models.post)
+      model.user.hasMany(model.sneaker)
     }
   };
   user.init({
@@ -22,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: {
           args: [1, 99],
-          msg: 'Name must be 1 to 99 characters'
+          msg: 'Name must be more than 1 character'
         }
       }
     },
@@ -40,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         len: {
           args: [8, 99],
           isEmail: true,
-          msg: 'Password must be 8 to 99 characters'
+          msg: 'Password must have more than 8 characters'
         }
       }
     }
