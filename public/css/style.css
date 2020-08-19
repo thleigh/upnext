@@ -1,25 +1,51 @@
-nav ul li {
-  display: inline-block;
-  margin-right: .3em;
-  margin-top: 40px;
-}
-
-.navLink{
-  text-decoration: none;
-  color: black;
-}
-
-.navLink:hover {
-  color: gray;
-}
-
 body {
   font-family: "helvetica";
   background-color: rgb(252, 252, 252);
 }
 
+nav ul li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.navLink{
+  top: 50px;
+  right: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.navLink:hover {
+  color: lightsteelblue;
+}
+
 #navbar {
-  text-align: right;
+}
+
+#navDiscover {
+  right: 50px;
+  position: absolute;
+  right: 300px; 
+}
+
+#navSignup {
+  position: absolute; 
+  right: 200px;
+}
+
+#navLogin {
+  position: absolute; 
+  right: 100px;
+}
+
+#navLogout {
+  position: absolute;
+  right: 100px;
+}
+
+#navProfile {
+  position: absolute;
+  right: 200px;
 }
 
 #upnext {
@@ -30,7 +56,7 @@ body {
 
 #upnextLink {
   text-decoration: none;
-  color: chartreuse;
+  color: lightsteelblue;
 }
 
 .subHeader {
@@ -130,4 +156,59 @@ body {
 #container {
   text-align: center;
   margin-top: 10%;
+}
+
+#signup {
+  width: 400px;
+  height: 400px;
+  padding: 40px;
+  margin: 100px auto 100px auto;
+  box-shadow: 4px 4px 7px black;
+  background-color: white;
+  text-align: center;
+}
+
+.signupDetails {
+  font-size: 20px;
+  margin: 20px auto auto auto;
+  padding: 20px;
+  width: 350px;
+}
+
+.pageTitleSignUp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 100px auto auto auto;
+  text-align: center;
+}
+
+#signup2 {
+  margin: 50px auto auto auto;
+}
+
+#signupSubmit {
+  font-size: 20px;
+  margin: 40px;
+}
+
+#submit2 {
+  background-color: white;
+}
+
+#submit2:hover {
+  background-color: lightsteelblue;
+}
+
+.alert {
+  color: red;
+}
+
+.alert-error {
+  color: red;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.error {
 }
