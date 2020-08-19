@@ -1,9 +1,20 @@
+<h1 class="pageTitleSignUp">Log-in</h1>
+
 <form action="/auth/login" method="POST">
-  <label for="auth-email">Email</label>
-  <input id="auth-email" type="email" name="email">
+  <div id="signup">
+    <div id="signup2"></div>
 
-  <label for="auth-password">Password</label>
-  <input id="auth-password" type="password" name="password">
+    <div id="signupEmail">
+      <input required placeholder="Email:" class="signupDetails" id="new-email" type="email" name="email">
+    </div>
+      
+      <div id="signupPassword">
+        <input required placeholder="Password:" class="signupDetails" id="new-password" type="password" name="password">
+      </div>
 
-  <input type="submit" value="Log In">
+      <div id="signupSubmit">
+        <input id="submit2" type="submit" value="Submit">
+      </div>
+    </div>
+  </div>
 </form>

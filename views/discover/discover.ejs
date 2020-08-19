@@ -1,16 +1,27 @@
-<h1 class="subHeader">Discover</h1>
+<div id="topDiscover">
 
-<form action="/discover/:shoe" method="GET">
-    <div class="searchBar">
-        <input type="text" class="shoeSearch" name="shoe" required placeholder="Find a shoe:">
-        <button type="submit">X</button>
+    <div class="subHeaderContainer">
+        <h1 class="subHeader">discover</h1>
     </div>
-</form>
+    
+    <form action="/discover/:shoe" method="GET">
+        <div class="searchBar">
+            <input type="text" class="shoeSearch" name="shoe" required placeholder="Find a shoe:">
+            <!-- <button type="submit">X</button> -->
+        </div>
+    </form>
+</div>
+    
+
+<!-- <div class="pageTitle">
+    <h1 id="trending">Trending Now</h1>
+</div> -->
+
+<div id="discoverHead">
+    <img id="jordanShoe" src="../../assets/jordan.png" alt="The GOAT">
+</div>
 
 <!-- Displays the results of the shoe search. -->
-<div class="pageTitle">
-    <h1 id="trending">Trending Now</h1>
-</div>
 <div class="grid">
     <% products.forEach(s => { %> 
         <div id="shoeResults">

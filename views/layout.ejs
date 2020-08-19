@@ -11,13 +11,14 @@
     <header id="navbar">
       <nav>
         <ul>
-          <li><a href="/discover" id="navDiscover" class="navLink">Discover</a></li>
+          <li><a href="/discover" id="navDiscover" class="navLink">discover</a></li>
+          <li><a href="/community" id="navCommunity" class="navLink">community</a></li>
           <% if (!currentUser) { %>
-            <li><a href="/auth/signup" id="navSignup" class="navLink">Signup</a></li>
-            <li><a href="/auth/login" id="navLogin" class="navLink">Login</a></li>
+            <li><a href="/auth/signup" id="navSignup" class="navLink">signup</a></li>
+            <li><a href="/auth/login" id="navLogin" class="navLink">login</a></li>
           <% } else { %>
-            <li><a href="/auth/logout" id="navLogout" class="navLink">Logout</a></li>
-            <li><a href="/profile" id="navProfile" class="navLink">Profile</a></li>
+            <li><a href="/auth/logout" id="navLogout" class="navLink">logout</a></li>
+            <li><a href="/profile" id="navProfile" class="navLink">profile</a></li>
           <% } %> 
         </ul>
       </nav>

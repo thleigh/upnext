@@ -7,7 +7,10 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const multer = require('multer')
+const upload = multer({dest: '.uploads'})
+const cloudinary = require('cloudinary')
 
 // Sneaks API
 const SneaksAPI = require('sneaks-api')
@@ -17,8 +20,8 @@ const sneaks = new SneaksAPI();
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
 
+cloudinary.config(process.env.CLOUDINARY_URL)
 app.set('view engine', 'ejs');
-
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
@@ -58,8 +61,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
-app.use('/discover', require('./routes/discover'))
-
+app.use('/discover', require('./routes/discover'));
+app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
 
 const port = process.env.PORT || 8000;

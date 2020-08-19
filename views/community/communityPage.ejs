@@ -1,0 +1,31 @@
+<div id="topCommunity">
+
+    <div class="subHeaderContainer">
+        <h1 class="subHeader">community</h1>
+    </div>
+
+    <div id="upload">
+        <h1>File Upload</h1>
+        
+        <form enctype="multipart/form-data" action="/" method="POST">
+            <input type="file" name="myFile">
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+
+</div>
+    
+
+<% if (myPics.length) { %> 
+    <div class="picBox">
+        <% myPics.forEach(p => { %>
+            <div>
+                <img src="<%=p.url%>" alt="picture">
+            </div>
+        <% }) %>
+    </div> 
+<% } else { %>
+    <h2>sorry, I don't have any pics</h2>
+<% } %> 
+
+<a href="/">New Pic?</a>
