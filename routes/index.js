@@ -13,7 +13,7 @@ request(URL, (error, response, body) => {
     let results = $('.releases-box')
     let filteredResults = results.map((index, element) => {
         return {
-            name: $(element).find('a').attr('name'),
+            name: $(element).find('a').text(),
             img: $(element).find('img').attr('src'),
         }
     })
