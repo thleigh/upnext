@@ -21,7 +21,9 @@ router.get('/', (req, res) => {
 router.post('/', upload.single('myFile'), (req, res) =>  {
   cloudinary.uploader.upload(req.file.path, (result) => {
     db.cloudpic.findOrCreate({
-      where: {url: result.url}
+      where: { 
+        url: result.url
+      }
     })
     .then(() => {
       res.redirect('/community')
@@ -31,6 +33,5 @@ router.post('/', upload.single('myFile'), (req, res) =>  {
     })
   })
 })
-
 
 module.exports = router;

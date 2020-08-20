@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 const multer = require('multer')
 const upload = multer({dest: '.uploads'})
 const cloudinary = require('cloudinary')
+const db = require('./models')
 
 // Sneaks API
 const SneaksAPI = require('sneaks-api')
@@ -64,6 +65,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 app.use('/discover', require('./routes/discover'));
 app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
+app.user('/profile', require('./routes/profile'))
 
 const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {

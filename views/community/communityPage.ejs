@@ -5,10 +5,15 @@
     </div>
 
     <div id="upload">
-        <h1>File Upload</h1>
+        <h1>upload your own:</h1>
         
         <form enctype="multipart/form-data" action="/community" method="POST">
+            <!-- <input type="text" name="name" class="comName" placeholder="Title:">
+            <br>
+            <br> -->
             <input type="file" name="myFile">
+            <br>
+            <br>
             <input type="submit" class="btn btn-primary">
         </form>
     </div>
@@ -19,11 +24,11 @@
 <div class="comGrid">
 <% if (myPics.length) { %> 
         <% myPics.forEach(p => { %>
-            <div>
-                <img src="<%=p.url%>" alt="picture">
+            <div id="comImage">
+                <img id="comPost" src="<%=p.url%>" alt="picture">
             </div>
         <% }) %>
     <% } else { %>
-        <h2>sorry, I don't have any pics</h2>
+        <h2>sorry, Nobody posted any pics</h2>
     <% } %> 
 </div> 

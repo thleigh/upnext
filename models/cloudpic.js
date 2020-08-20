@@ -11,13 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.cloudpic.belongsTo(models.post)
-
     }
   };
   cloudpic.init({
-    url: DataTypes.STRING
-
+    url: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'cloudpic',
