@@ -65,7 +65,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 app.use('/discover', require('./routes/discover'));
 app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
-app.user('/profile', require('./routes/profile'))
+app.use('/profile', require('./routes/profile'))
 
 const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {

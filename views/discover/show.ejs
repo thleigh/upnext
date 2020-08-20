@@ -4,6 +4,13 @@
     <% products.forEach(s => { %> 
         <div id="shoeDetails">
             <h2 class="detail"><%= s.shoeName %></h2>
+
+            <form method="POST" action="/profile">
+                <input hidden type="text" name="id" value="<%=s.styleID%>">
+                <button type="submit">Add to favorites</button>
+            </form>
+            <br>
+
             <img class="detailImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>"> 
             <h4 id="releaseDate">Released: <%= s.releaseDate%></h4>
             <h4 id="retailPrice">Retail Price: $<%= s.retailPrice%></h4>
