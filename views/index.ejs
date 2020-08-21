@@ -1,4 +1,15 @@
 
+<p id="indexHeader">Welcome to upnext. Browse check this month's Jordan release dates, search the Jordan archive, and post your sneaker fits!</p>
 
-<h2 class="subHeader">Homepage</h2>
 
+<div class="indexGrid">
+    <% data.slice(1).forEach(s => { %>
+        <div id="indexContainer">
+            <img id="indexImg" src="<%= s.img%>" alt="<% s.name%>">
+            <h2><%= s.name %></h2>
+            <p>Release Date: <%= s.date %> </p>
+            <p>Price: <%= s.price %> </p>
+            <p><%= s.size %></p>
+        </div>
+        <% }) %> 
+</div>

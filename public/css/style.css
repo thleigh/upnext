@@ -87,8 +87,9 @@ nav ul li {
   grid-gap: 30px;
   text-align: center;
   padding: 80px 50px 50px 50px;
-  margin: 59% auto auto auto;
+  margin: 57% auto auto auto;
   background-color: white;
+  box-shadow: 4px 4px 7px lightsteelblue;
 }
 
 .shoeName {
@@ -280,6 +281,7 @@ nav ul li {
   padding: 80px 50px 50px 50px;
   margin: 50% auto auto auto;
   background-color: white;
+  box-shadow: 4px 4px 7px lightsteelblue;
 }
 #upload {
   margin: 250px auto auto auto;
@@ -302,4 +304,25 @@ nav ul li {
 
 #comPost {
   width: 200px;
+}
+
+.indexGrid {
+  display: grid;
+  width: 800px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 30px;
+  text-align: center;
+  padding: 80px 50px 50px 50px;
+  margin: 10% auto auto auto;
+  background-color: white;
+  box-shadow: 4px 4px 7px lightsteelblue;
+}
+
+#indexContainer {
+  /* width: 200px; */
+}
+
+#indexImg {
+  width: 200px
 }
