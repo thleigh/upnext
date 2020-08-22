@@ -8,8 +8,8 @@ const bodyParser = require('body-parser');
 
 
 
-router.get('/', (req, res) => {
-    const URL = 'https://sneakernews.com/air-jordan-release-dates/'
+router.get('/', async (req, res) => {
+    const URL = await 'https://sneakernews.com/air-jordan-release-dates/'
 
     request(URL, (error, response, body) => {
             let $ = cheerio.load(body)
