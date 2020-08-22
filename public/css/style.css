@@ -19,9 +19,6 @@ nav ul li {
   color: lightsteelblue;
 }
 
-#navbar {
-}
-
 #navDiscover {
   right: 50px;
   position: absolute;
@@ -87,7 +84,7 @@ nav ul li {
   grid-gap: 30px;
   text-align: center;
   padding: 80px 50px 50px 50px;
-  margin: 57% auto auto auto;
+  margin: 61% auto auto auto;
   background-color: white;
   box-shadow: 4px 4px 7px lightsteelblue;
 }
@@ -245,7 +242,7 @@ nav ul li {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 56% auto auto auto;
+  margin: 58% auto auto auto;
   text-align: center;
 }
 
@@ -313,8 +310,8 @@ nav ul li {
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 30px;
   text-align: center;
-  padding: 80px 50px 50px 50px;
-  margin: 10% auto auto auto;
+  padding: 90px 50px 50px 50px;
+  margin: 50px auto auto auto;
   background-color: white;
   box-shadow: 4px 4px 7px lightsteelblue;
 }
@@ -325,4 +322,40 @@ nav ul li {
 
 #indexImg {
   width: 200px
+}
+
+#indexHeader {
+  position: absolute;
+  font-size: 20px;
+  margin: 250px auto auto auto;
+  width: 550px;
+  text-align: center;
+  left: 25%;
+  z-index: 2;
+}
+
+#indexVideo {
+  width: 100%;
+  margin: 70px auto auto auto;
+  opacity: 60%;
+  z-index: 1;
+}
+
+.indexTitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 50px auto auto auto;
+  text-align: center;
+}
+
+#indexSneakerName {
+  font-size: 14px;
+  text-align: center;
+}
+
+#indexInfo {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 67px;
 }
