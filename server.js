@@ -12,6 +12,8 @@ const multer = require('multer')
 const upload = multer({dest: '.uploads'})
 const cloudinary = require('cloudinary')
 const db = require('./models')
+let methodOverride = require('method-override');
+
 
 // Sneaks API
 const SneaksAPI = require('sneaks-api')
@@ -27,6 +29,7 @@ app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
+app.use(methodOverride('_method'));
 
 // secret: What we actually giving the user to use our site / session cookie
 // resave: Save the session even if it's modified, make this false
@@ -59,7 +62,40 @@ app.use((req, res, next) => {
 // });
 
 app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile');
+  let favSneaker = db.sneaker.findAll()
+  .then((fav) => {
+      res.render('profile', {sneaker:fav})
+  })
+});
+
+app.post('/profile', (req, res) => {
+  db.sneaker.findOrCreate({
+      where: {styleID: req.body.id}
+  })
+  .then(function() {
+      res.redirect('/profile')
+  })
+})
+
+app.delete('/profile',  (req, res) => {
+  db.sneaker.destroy({
+    where: {name: req.body.id}
+    })
+    .then(function() {
+      res.redirect('/profile');
+    })
+})
+
+app.post('/profile/:id', (req, res) => {
+  sneaks.getProducts(req.body.id, function(err, products){
+      if(err) {
+          console.log(err)
+          res.render('notfound')
+      } else {
+          console.log(products)
+          res.render('profile', {products})
+      };
+  });
 });
 
 app.use('/', require('./routes/index.js'))
