@@ -109,7 +109,7 @@ app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
 // app.use('/profile', require('./routes/profile'))
 
-const port = process.env.PORT || 9000;
+const port = process.env.PORT;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });
