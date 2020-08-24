@@ -1,15 +1,28 @@
-<h2>Profile Page</h2>
-
-<h3>Welcome to your PROFILE</h3>
-  
-<% fav.forEach( s => { %>
-    <div>
-        <h2>
-            <%= s.styleID %> 
-        </h2>
+<div class="subHeaderProf">
+        <h1 class="subHeader">Profile</h1>
     </div>
-    <form method="POST" action="/profile?_method=DELETE">
-        <input hidden type="text" name="id" value="<%=s.styleID%>">
-        <button type="submit">Remove</button>        
-    </form>
-<% }) %> 
+</div>
+
+<!-- <h3>Welcome </h3> -->
+  
+
+<div class="pageTitleFav">
+    <h1 id="favorites">Favorites</h1>
+</div>
+
+<div class="profGrid">
+    <% if (fav.length) { %> 
+            <% fav.forEach(s => { %>
+                <div id="comImage">
+                    <img id="comPost" src="<%=s.thumbnail%>" alt="picture">
+                    <h5><%= s.shoeName %></h5>
+                    <form method="POST" action="/profile?_method=DELETE">
+                        <input hidden type="text" name="id" value="<%=s.styleID%>">
+                        <button type="submit">Remove</button>        
+                    </form>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h2>sorry, You haven't chosen any sneakers as favorites.</h2>
+        <% } %> 
+    </div> 

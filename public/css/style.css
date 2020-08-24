@@ -280,6 +280,7 @@ nav ul li {
   background-color: white;
   box-shadow: 4px 4px 7px lightsteelblue;
 }
+
 #upload {
   margin: 250px auto auto auto;
   text-align: center;
@@ -362,4 +363,36 @@ nav ul li {
   font-size: 12px;
   text-align: left;
   margin-left: 67px;
+}
+
+.profGrid {
+  display: grid;
+  width: 800px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 30px;
+  text-align: center;
+  padding: 80px 50px 50px 50px;
+  margin: 400px auto auto auto;
+  background-color: white;
+  box-shadow: 4px 4px 7px lightsteelblue;
+}
+
+.pageTitleFav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 375px auto auto auto;
+  text-align: center;
+}
+
+
+.subHeaderProf {
+  margin: 200px auto auto auto;
+  text-align: center;
+  z-index: 4;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

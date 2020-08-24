@@ -22,6 +22,7 @@ const sneaks = new SneaksAPI();
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
+// const { UUID } = require('sequelize/types');
 
 cloudinary.config(process.env.API_KEY)
 app.set('view engine', 'ejs');
@@ -57,11 +58,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get('/', (req, res) => {
-//   res.render('index', {alerts: res.locals.alerts});
-// });
-
-app.get('/profile', isLoggedIn, (req, res) => {
+app.get('/profile/', isLoggedIn, (req, res) => {
+  // db.user.findOne({
+  //   where: {id: req.user}
+  // })
+  // .then((user))
   let favSneaker = db.sneaker.findAll()
   .then((fav) => {
       res.render('profile', {fav})
@@ -70,7 +71,11 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.post('/profile', (req, res) => {
   db.sneaker.findOrCreate({
-      where: {styleID: req.body.id}
+      where: {
+        styleID: req.body.id,
+        thumbnail: req.body.thumbnail,
+        shoeName: req.body.shoeName,
+      }
   })
   .then(function() {
       res.redirect('/profile')
@@ -102,7 +107,7 @@ app.use('/', require('./routes/index.js'))
 app.use('/discover', require('./routes/discover'));
 app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
-app.use('/profile', require('./routes/profile'))
+// app.use('/profile', require('./routes/profile'))
 
 const port = process.env.PORT_TWO || 8000;
 const server = app.listen(port, () => {

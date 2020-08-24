@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   sneaker.init({
     styleID: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    thumbnail: DataTypes.TEXT,
+    shoeName: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'sneaker',

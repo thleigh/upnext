@@ -14,6 +14,12 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER
       },
+      thumbnail: {
+        type: Sequelize.TEXT
+      },
+      shoeName: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
