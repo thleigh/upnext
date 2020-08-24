@@ -109,9 +109,11 @@ app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
 // app.use('/profile', require('./routes/profile'))
 
-const port = process.env.PORT_TWO || 3000;
+const port = process.env.PORT_TWO || 4000;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });
 
+module.exports = {mongoose}
 module.exports = server;
+module.exports = SneaksAPI;
