@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   sneaker.init({
     styleID: DataTypes.STRING,
-    }, {
+    userId: DataTypes.INTEGER
+  }, {
     sequelize,
     modelName: 'sneaker',
   });

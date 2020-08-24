@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 // router.get('/', (req, res) => {
 //     let favSneaker = db.sneaker.findAll()
 //     .then((fav) => {
-//         res.render('profile', {sneaker:fav})
+//         res.render('profile', {fav})
 //     })
 // })
 

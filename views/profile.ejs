@@ -2,14 +2,14 @@
 
 <h3>Welcome to your PROFILE</h3>
   
-<% sneaker.forEach( fav => { %>
+<% fav.forEach( s => { %>
     <div>
         <h2>
-            <%= fav %> 
+            <%= s %> 
         </h2>
     </div>
     <form method="POST" action="/sneakers?_method=DELETE">
-        <input hidden type="text" name="name" value="<%=fav%>">
+        <input hidden type="text" name="name" value="<%=s%>">
         <button type="submit">Remove</button>        
     </form>
 <% }) %> 

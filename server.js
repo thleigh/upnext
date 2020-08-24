@@ -64,7 +64,7 @@ app.use((req, res, next) => {
 app.get('/profile', isLoggedIn, (req, res) => {
   let favSneaker = db.sneaker.findAll()
   .then((fav) => {
-      res.render('profile', {fav: sneaker})
+      res.render('profile', {fav})
   })
 });
 
