@@ -16,6 +16,7 @@
     "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bufferutil": "^4.0.1",
     "cheerio": "^1.0.0-rc.3",
     "cloudinary": "^1.22.0",
     "connect-flash": "^0.1.1",
@@ -40,6 +41,9 @@
     "sequelize": "^5.8.12",
     "sequelize-cli": "^6.2.0",
     "sessions": "0.0.2-7",
-    "sneaks-api": "^1.0.7"
+    "sneaks-api": "^1.0.7",
+    "socket.io": "^2.3.0",
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.3.1"
   }
 }

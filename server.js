@@ -14,7 +14,6 @@ const cloudinary = require('cloudinary')
 const db = require('./models')
 let methodOverride = require('method-override');
 
-
 // Sneaks API
 const SneaksAPI = require('sneaks-api/other-server')
 const sneaks = new SneaksAPI();
@@ -109,11 +108,12 @@ app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
 // app.use('/profile', require('./routes/profile'))
 
-const port = process.env.PORT;
-const server = app.listen(port, () => {
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });
 
 module.exports = {mongoose}
-module.exports = server;
 module.exports = SneaksAPI;
