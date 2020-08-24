@@ -77,14 +77,14 @@ app.post('/profile', (req, res) => {
   })
 })
 
-// app.delete('/profile',  (req, res) => {
-//   db.sneaker.destroy({
-//     where: {name: req.body.id}
-//     })
-//     .then(function() {
-//       res.redirect('/profile');
-//     })
-// })
+app.delete('/profile',  (req, res) => {
+  db.sneaker.destroy({
+    where: {styleID: req.body.id}
+    })
+    .then(function() {
+      res.redirect('/profile');
+    })
+})
 
 // app.post('/profile/:id', (req, res) => {
 //   sneaks.getProducts(req.body.id, function(err, products){
