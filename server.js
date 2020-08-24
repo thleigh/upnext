@@ -102,7 +102,6 @@ app.delete('/profile',  (req, res) => {
 //       };
 //   });
 // });
-//
 
 app.use('/', require('./routes/index.js'))
 app.use('/discover', require('./routes/discover'));
