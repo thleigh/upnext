@@ -5,11 +5,11 @@
 <% sneaker.forEach( fav => { %>
     <div>
         <h2>
-            <%= fav.id %> 
+            <%= fav %> 
         </h2>
     </div>
     <form method="POST" action="/sneakers?_method=DELETE">
-        <input hidden type="text" name="name" value="<%=fav.id%>">
+        <input hidden type="text" name="name" value="<%=fav%>">
         <button type="submit">Remove</button>        
     </form>
 <% }) %> 

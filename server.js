@@ -64,7 +64,7 @@ app.use((req, res, next) => {
 app.get('/profile', isLoggedIn, (req, res) => {
   let favSneaker = db.sneaker.findAll()
   .then((fav) => {
-      res.render('profile', {sneaker:fav})
+      res.render('profile', {fav: sneaker})
   })
 });
 
@@ -77,26 +77,26 @@ app.post('/profile', (req, res) => {
   })
 })
 
-app.delete('/profile',  (req, res) => {
-  db.sneaker.destroy({
-    where: {name: req.body.id}
-    })
-    .then(function() {
-      res.redirect('/profile');
-    })
-})
+// app.delete('/profile',  (req, res) => {
+//   db.sneaker.destroy({
+//     where: {name: req.body.id}
+//     })
+//     .then(function() {
+//       res.redirect('/profile');
+//     })
+// })
 
-app.post('/profile/:id', (req, res) => {
-  sneaks.getProducts(req.body.id, function(err, products){
-      if(err) {
-          console.log(err)
-          res.render('notfound')
-      } else {
-          console.log(products)
-          res.render('profile', {products})
-      };
-  });
-});
+// app.post('/profile/:id', (req, res) => {
+//   sneaks.getProducts(req.body.id, function(err, products){
+//       if(err) {
+//           console.log(err)
+//           res.render('notfound')
+//       } else {
+//           console.log(products)
+//           res.render('profile', {products})
+//       };
+//   });
+// });
 
 app.use('/', require('./routes/index.js'))
 app.use('/discover', require('./routes/discover'));

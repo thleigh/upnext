@@ -1,8 +1,10 @@
 
-<h3 id="indexHeader">Welcome to upnext! 
-    <br>
-    Browse this month's Jordan release dates, search the sneaker database, and post your sneaker fits!
-</h3>
+<div id="indexHeadContainer">
+    <h3 id="indexHeader">Welcome to upnext! 
+        <br>
+        Browse upcoming releases, Search the sneaker database, and post your fits!
+    </h3>
+</div>
 
 <video autoplay muted loop id="indexVideo">
     <source src="../assets/video-bg.mp4" type="video/mp4">
@@ -14,6 +16,7 @@
 
 <div class="indexGrid">
     <% data.slice(1).forEach(s => { %>
+        <% if(s.img )  { %> 
         <div id="indexContainer">
             <img id="indexImg" src="<%= s.img%>" alt="<% s.name%>">
             <h5 id="indexSneakerName"><%= s.name %></h5>
@@ -23,5 +26,6 @@
                 <p><%= s.size %></p>
             </div>
         </div>
-        <% }) %> 
+        <% } %> 
+    <% }) %> 
 </div>

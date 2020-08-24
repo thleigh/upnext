@@ -325,13 +325,17 @@ nav ul li {
 }
 
 #indexHeader {
-  position: absolute;
   font-size: 20px;
-  margin: 250px auto auto auto;
-  width: 550px;
   text-align: center;
-  left: 25%;
+}
+
+#indexHeadContainer {
+  width: 550px;
+  position: absolute;
   z-index: 2;
+  margin: 21% auto auto auto;
+  left:0;
+  right:0;  
 }
 
 #indexVideo {
