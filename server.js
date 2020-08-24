@@ -15,7 +15,7 @@ const db = require('./models')
 let methodOverride = require('method-override');
 
 // Sneaks API
-const SneaksAPI = require('sneaks-api/other-server')
+const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI();
 // require('./routes/sneaks.routes.js')(app);
 
@@ -89,18 +89,6 @@ app.delete('/profile',  (req, res) => {
       res.redirect('/profile');
     })
 })
-
-// app.post('/profile/:id', (req, res) => {
-//   sneaks.getProducts(req.body.id, function(err, products){
-//       if(err) {
-//           console.log(err)
-//           res.render('notfound')
-//       } else {
-//           console.log(products)
-//           res.render('profile', {products})
-//       };
-//   });
-// });
 
 app.use('/', require('./routes/index.js'))
 app.use('/discover', require('./routes/discover'));
