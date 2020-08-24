@@ -396,3 +396,8 @@ nav ul li {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#errorCont {
+  margin: 200px auto auto auto;
+  text-align: center;
+}

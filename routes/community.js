@@ -28,8 +28,9 @@ router.post('/', upload.single('myFile'), (req, res) =>  {
     .then(() => {
       res.redirect('/community')
     })
-    .catch(err => {
-      console.log(err)
+    .catch((error) => {
+      console.log(error)
+      res.status(400).render('main/404')
     })
   })
 })

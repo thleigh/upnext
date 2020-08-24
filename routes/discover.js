@@ -42,7 +42,11 @@ router.post('/:id', (req, res) => {
             console.log(products)
             res.render('discover/show', {products})
         };
-    });
+    })  
+    .catch((error) => {
+    console.log(error)
+    res.status(400).render('main/404')
+  })
 });
 
 module.exports = router;

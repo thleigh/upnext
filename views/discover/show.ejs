@@ -5,7 +5,7 @@
         <div id="shoeDetails">
             <h2 class="detail"><%= s.shoeName %></h2>
 
-            <form method="POST" action="/profile/:id">
+            <form method="POST" action="/profile/">
                 <input hidden type="text" name="id" value="<%=s.styleID%>">
                 <input  hidden type="text" name="thumbnail" value="<%= s.thumbnail%>">
                 <input  hidden type="text" name="shoeName" value="<%= s.shoeName%>">

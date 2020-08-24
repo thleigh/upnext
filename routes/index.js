@@ -33,7 +33,12 @@ router.get('/', async (req, res) => {
             // console.log(filteredResults.get())
             res.render('index', {data: filteredResults})
     })
+    .catch((error) => {
+    console.log(error)
+    res.status(400).render('404')
+  })
 })
+
 
 // const URL = 'https://sneakernews.com/air-jordan-release-dates/'
 

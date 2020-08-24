@@ -66,11 +66,15 @@ app.get('/profile/', isLoggedIn, (req, res) => {
   .then((fav) => {
       res.render('profile', {fav})
   })
+  .catch((error) => {
+    console.log(error)
+  })
 });
 
 app.post('/profile', (req, res) => {
   db.sneaker.findOrCreate({
-      where: {
+    include:[db.user],
+    where: {
         styleID: req.body.id,
         thumbnail: req.body.thumbnail,
         shoeName: req.body.shoeName,
@@ -78,6 +82,9 @@ app.post('/profile', (req, res) => {
   })
   .then(function() {
       res.redirect('/profile')
+  })
+  .catch((error) => {
+    console.log(error)
   })
 })
 
@@ -88,14 +95,23 @@ app.delete('/profile',  (req, res) => {
     .then(function() {
       res.redirect('/profile');
     })
+    .catch((error) => {
+      console.log(error)
+    })
 })
+
 
 app.use('/', require('./routes/index.js'))
 app.use('/discover', require('./routes/discover'));
 app.use('/community', require('./routes/community'));
 app.use('/auth', require('./routes/auth'));
+app.use(express.static('public'));
+app.use(express.static('views'));
 // app.use('/profile', require('./routes/profile'))
 
+app.get('*', (req, res) => {
+  res.render('404')
+})
 
 const port = process.env.PORT || 3000;
 
