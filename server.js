@@ -16,7 +16,7 @@ let methodOverride = require('method-override');
 
 
 // Sneaks API
-const SneaksAPI = require('sneaks-api')
+const SneaksAPI = require('sneaks-api/other-server')
 const sneaks = new SneaksAPI();
 // require('./routes/sneaks.routes.js')(app);
 

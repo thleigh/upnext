@@ -4,7 +4,7 @@ const db = require('../models')
 const bodyParser = require('body-parser');
 
 // Sneaks API
-const SneaksAPI = require('sneaks-api')
+const SneaksAPI = require('sneaks-api/other-server')
 const sneaks = new SneaksAPI();
 
 // Gets the most popular shoes at the moment and displays them.
