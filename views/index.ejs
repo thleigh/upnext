@@ -15,8 +15,8 @@
 </div>
 
 <div class="indexGrid">
-    <% data.slice(1).forEach(s => { %>
-        <% if(s.img )  { %> 
+    <% data.slice(data, 11).forEach(s => { %>
+        <% if(s.img)  { %> 
         <div id="indexContainer">
             <img id="indexImg" src="<%= s.img%>" alt="<% s.name%>">
             <h5 id="indexSneakerName"><%= s.name %></h5>
