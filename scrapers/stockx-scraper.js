@@ -1,5 +1,5 @@
 const got = require('got');
-const Sneaker = require('../models/Sneaker');
+const Sneaker = require('../models/Sneaker-api');
 
 
 module.exports = {

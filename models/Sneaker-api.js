@@ -37,6 +37,6 @@ var SneakerSchema = new Schema({
 
 });
 
-var Sneaker = mongoose.model("Sneaker", SneakerSchema);
+var Sneaker = mongoose.model("Sneaker-api", SneakerSchema);
 
 module.exports = Sneaker;
