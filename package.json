@@ -41,7 +41,6 @@
     "sequelize": "^5.8.12",
     "sequelize-cli": "^6.2.0",
     "sessions": "0.0.2-7",
-    "sneaks-api": "^1.0.7",
     "socket.io": "^2.3.0",
     "utf-8-validate": "^5.0.2",
     "ws": "^7.3.1"

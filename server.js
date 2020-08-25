@@ -13,11 +13,6 @@ const upload = multer({dest: '.uploads'});
 const cloudinary = require('cloudinary');
 const db = require('./models');
 let methodOverride = require('method-override');
-const Sneaker = require('./models/Sneaker-api');
-const stockXScraper = require('./scrapers/stockx-scraper');
-const flightClubScraper = require('./scrapers/flightclub-scraper');
-const goatScraper = require('./scrapers/goat-scraper');
-const stadiumGoodsScraper = require('./scrapers/stadiumgoods-scraper');
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
@@ -119,17 +114,18 @@ app.get('*', (req, res) => {
 const SneaksAPI = require('./controllers/sneaks.controllers.js');
 const server = require('http').createServer(app);
 
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
+});
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env.MONGOLAB_JADE_URI || process.env.MONGODB_URI || 'mongodb://localhost:27017/sneakers', { useNewUrlParser: true })
         .then(connect => console.log('connected to mongodb..'))
         .catch(e => console.log('could not connect to mongodb', e))
 
-const port = process.env.PORT;
 
-app.listen(port, () => {
-  console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
-});
-
-module.exports = {mongoose}
+module.exports = app;
 module.exports = SneaksAPI;
