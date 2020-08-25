@@ -53,16 +53,10 @@ app.use((req, res, next) => {
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
-  db.user.findOne({
-    where: {
-      id: req.user.id
-    }
-  })
-  .then((user) => {
+
     db.sneaker.findAll()
-  })
   .then((fav) => {
-    res.render('profile', {fav, user})
+    res.render('profile', {fav})
     })
     .catch((error) => {
       console.log(error)
