@@ -24,6 +24,7 @@
 <!-- Displays the results of the shoe search. -->
 <div class="grid">
     <% products.forEach(s => { %> 
+        <% if (s.thumbnail) { %>
         <div id="shoeResults">
             <form action="/discover/:id" method="POST">
                 <img class="shoeImg" src="<%= s.thumbnail %>" alt="<%= s.shoeName%>">
@@ -31,7 +32,7 @@
                 <button type="submit" class="shoeName"><%= s.shoeName %></button>
             </form>
         </div>
-
+    <% } %> 
         <!-- <div class="popup" id="popup-1">
                 <div class="overlay">
                     <div id="content">

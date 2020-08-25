@@ -57,18 +57,21 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/profile/', isLoggedIn, (req, res) => {
-  // db.user.findOne({
-  //   where: {id: req.user}
-  // })
-  // .then((user))
-  let favSneaker = db.sneaker.findAll()
+app.get('/profile', isLoggedIn, (req, res) => {
+  db.user.findOne({
+    where: {
+      id: req.user.id
+    }
+  })
+  .then((user) => {
+    db.sneaker.findAll()
+  })
   .then((fav) => {
-      res.render('profile', {fav})
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+    res.render('profile', {fav, user})
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 });
 
 app.post('/profile', (req, res) => {
@@ -112,7 +115,7 @@ app.use(express.static('views'));
 app.get('*', (req, res) => {
   res.render('404')
 })
-
+        
 const port = process.env.PORT;
 
 app.listen(port, () => {
