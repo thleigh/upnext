@@ -8,16 +8,16 @@ const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const multer = require('multer')
-const upload = multer({dest: '.uploads'})
-const cloudinary = require('cloudinary')
-const db = require('./models')
+const multer = require('multer');
+const upload = multer({dest: '.uploads'});
+const cloudinary = require('cloudinary');
+const db = require('./models');
 let methodOverride = require('method-override');
-
-// Sneaks API
-const SneaksAPI = require('sneaks-api')
-const sneaks = new SneaksAPI();
-// require('./routes/sneaks.routes.js')(app);
+const Sneaker = require('./models/Sneaker-api');
+const stockXScraper = require('./scrapers/stockx-scraper');
+const flightClubScraper = require('./scrapers/flightclub-scraper');
+const goatScraper = require('./scrapers/goat-scraper');
+const stadiumGoodsScraper = require('./scrapers/stadiumgoods-scraper');
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
@@ -115,7 +115,16 @@ app.use(express.static('views'));
 app.get('*', (req, res) => {
   res.render('404')
 })
-        
+
+const SneaksAPI = require('./controllers/sneaks.controllers.js');
+const server = require('http').createServer(app);
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(process.env.MONGOLAB_JADE_URI || process.env.MONGODB_URI || 'mongodb://localhost:27017/sneakers', { useNewUrlParser: true })
+        .then(connect => console.log('connected to mongodb..'))
+        .catch(e => console.log('could not connect to mongodb', e))
+
 const port = process.env.PORT;
 
 app.listen(port, () => {
