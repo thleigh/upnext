@@ -1,6 +1,8 @@
 # upnext
 upnext is a website where users can find out about upcoming show releases, where to buy them, and how to buy them. upnext users will be able to browse older generations of sneakers and interact with other users through community pages that allow them to post pictures, comment, like, and favorite.
 
+site: http://upnext-app.herokuapp.com/
+
 <hr>
 
 ## Setup:
