@@ -108,7 +108,7 @@ app.get('*', (req, res) => {
 const SneaksAPI = require('./controllers/sneaks.controllers.js');
 const server = require('http').createServer(app);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);

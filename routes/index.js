@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
                 date: $(element).find('span', '.release-date').text().substring(29,34),
                 price: $(element).find('span[class=release-price]').text(),
                 size: sizeClean,
-            }
+                }
             })
             filteredResults = filteredResults.get()
             // console.log(filteredResults.get())
